@@ -32,10 +32,11 @@ body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/island-hlavicka.jpg");
     background-position: center;
     background-size: cover;
-    padding: 25px;
+    padding: 20px;
 }
 .autor {
     font-style: italic;
+    padding: 0 0 25px 0
 }
 
 
@@ -45,6 +46,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 15pt;
 }
 
 .menu ul {
@@ -64,6 +66,7 @@ body {
     text-transform: uppercase;
     font-family: sans-serif;
 }
+
 
 
 /* OBSAH */
@@ -103,14 +106,136 @@ h2 {
     flex-direction: column;
 }
 .galerie img {
-    border: solid red 5px;
     margin: 0;
     width: 100%;
     display: block;
 }
-/*.galerie p {
+.galerie .popisek {
     font-weight: bold;
-}*/
+}
+.galerie .popisek-copy {
+    font-weight: normal
+}
 
 
 /* PATICKA */
+
+.paticka {
+    padding: 15px 0;
+    color: grey;
+    background-image: linear-gradient( lightgrey, #f5f5f5, #f5f5f5 );
+    font-size: smaller;
+}
+
+.paticka a {
+    color: grey;
+}
+
+@media (min-width: 500px) {
+    /*MENU*/
+    .menu li {  
+        border-right: lightgrey solid 1px;
+        border-top: lightgrey solid 1px
+    }
+    .menu {
+        flex-direction: row;
+        min-width:100%;
+        align-items: flex-end;
+        
+    }
+    
+    .menu .fotogal {
+        border-right:none;
+    }
+    /*OBRAZY V TEXTU*/
+    .obraz {
+        position: relative
+    }
+    .obraz .popisek {
+        color: white;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    .obraz a {
+        color: white;
+    }
+    /*FOTOGALERIE*/
+
+    .galerie {
+        flex-direction: row;
+        flex-wrap:wrap;
+    }
+    .galerie .foto {
+        flex-basis: 50%;
+        position: relative;
+        overflow: hidden;
+    }
+    .galerie .popisek {
+        margin: 0;
+        color:white;
+        font-weight: normal;
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: 0.3s;
+        position: absolute;
+        width: 100%;
+    }
+    .galerie a {
+        color: white;
+    }
+
+    .foto:hover .popisek {
+        transform: translateY(-100%)
+    }
+
+}
+
+@media (min-width: 1000px) {
+    /*TĚLO WEBU*/
+    .pcbody {
+        width: 960px;
+        margin: -40px auto 0 auto;
+        background-color: white;
+        box-shadow: 5px 5px 15px #888888;
+    }
+    /* ÚVODNÍ ČÁST*/
+    .pcuvod {
+        display: flex; 
+    }
+    .menu {
+    flex-direction: column;
+    min-width: 30%;
+    margin: 25px 0
+   }
+   .menu li {
+    border-right: none;
+    border-top: none;
+    text-align: left;
+    padding-left: 5px;
+   }
+   /*ODSTAVCE*/
+   .text {
+    margin: 30px 25px;
+   }
+   .procjetnaisland {
+    padding-right: 170px;
+   }
+
+   .comusitevidet {
+    padding-left: 170px
+   }
+
+   /*GALERIE*/
+   .galerie .foto {
+    flex-basis: 33.3%;
+    }
+    
+    /*PATICKA*/
+    .paticka {
+        background-image: none;
+        width: 960px;
+        margin: 25px auto 5px auto;
+    }
+    .paticka p {
+        padding: 0
+    }
