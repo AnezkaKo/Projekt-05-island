@@ -19,6 +19,9 @@ body {
     flex-direction: column;
 }
 
+h1::after {
+    content: line 
+  }
 
 /* HLAVICKA */
 
@@ -29,10 +32,16 @@ body {
 .hlavicka {
     color: white;
     text-align: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/island-hlavicka.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("images/island-hlavicka.jpg");
     background-position: center;
     background-size: cover;
     padding: 20px;
+}
+.hlavickapodtrzeni {
+    height: 2px;
+    width: 20%;
+    background-color: white;
+    margin: 20px auto 20px auto
 }
 .autor {
     font-style: italic;
@@ -67,6 +76,11 @@ body {
     font-family: sans-serif;
 }
 
+.menu a:hover {
+    color: black;
+    font-weight: bold;
+}
+
 
 
 /* OBSAH */
@@ -97,6 +111,13 @@ h2 {
 .obraz img {
     max-width: 100%;
     display: block;
+}
+
+.podtrzeni {
+    height: 3px;
+    width: 20%;
+    background-color: rgb(0, 187, 255);
+    margin: 0 0 25px 0
 }
 
 /* FOTOGALERIE */
@@ -135,12 +156,12 @@ h2 {
     /*MENU*/
     .menu li {  
         border-right: lightgrey solid 1px;
-        border-top: lightgrey solid 1px
+        border-top: lightgrey solid 1px;
     }
     .menu {
         flex-direction: row;
         min-width:100%;
-        align-items: flex-end;
+        align-items: stretch;
         
     }
     
@@ -214,10 +235,13 @@ h2 {
     padding-left: 5px;
    }
    /*ODSTAVCE*/
-   .text {
+   .text, .sekcegalerie {
     margin: 30px 25px;
    }
-   .procjetnaisland {
+   .podtrzeni {
+    margin-left: -25px;
+   }
+   .procjetnaisland, .sekcegalerie {
     padding-right: 170px;
    }
 
